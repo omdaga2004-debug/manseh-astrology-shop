@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Manseh Astrology Shop"
+description = "A dark luxury astrology storefront for browsing The bag collection, viewing products, managing a cart, signing in, and exploring Kundli services through the existing Railway API."
+version = "1.0.0"
+id = "artifacts/manseh-shop"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26084
+
+[services.development]
+run = "pnpm --filter @workspace/manseh-shop run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/manseh-shop", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/manseh-shop/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26084"
+BASE_PATH = "/"
