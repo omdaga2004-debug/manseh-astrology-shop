@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { ShoppingBag, Menu, X, Instagram, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { useStore } from "@/lib/store";
-import { CurrencySwitcher } from "@/components/currency-switcher";
+
 
 const nav = [
   { href: "/", label: "Home" },
@@ -36,7 +36,7 @@ export function SiteHeader() {
         </Link>
 
         <div className="flex items-center gap-5">
-          <CurrencySwitcher />
+          
           <Link href="/cart" className="flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/60 hover:text-white">
             <ShoppingBag size={15} /> Bag ({bagCount})
           </Link>
