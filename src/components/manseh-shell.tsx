@@ -24,7 +24,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <button type="button" onClick={() => setOpen((v) =>!v)} className="text-[11px] tracking-[0.2em] uppercase text-white/70 md:hidden">
-          {open? <X size={15} /> : <Menu size={15} />} Menu
+           Menu
         </button>
         <Link href="/" className="absolute left-1/2 -translate-x-1/2 text-white text-[26px] tracking-[0.35em] font-serif font-light">
           MANSEH
