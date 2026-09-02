@@ -1,43 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap');
-@import "tailwindcss";
-
-@theme {
-  --color-background: #0A0F0D;
-  --color-foreground: #F5F1E8;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #0A0F0D;
-  color: #F5F1E8;
-  font-family: 'IBM Plex Mono', monospace;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, .serif {
-  font-family: 'Cormorant Garamond', serif;
-}
-
-/* scrollbar hatane ke liye - premium look */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-/* --- FIX: Premium clean fonts --- */
-* {
-  letter-spacing: normal !important;
-}
-h1, h2, h3 {
-  letter-spacing: -0.03em !important;
-  line-height: 1.1 !important;
-  font-weight: 700 !important;
-}
-p, span, a, button, li {
-  letter-spacing: 0.01em !important;
-  line-height: 1.6 !important;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { font-family: 'Inter', sans-serif; background: #FFFEFB; }
+h1, h2 { font-family: 'Playfair Display', serif; }
