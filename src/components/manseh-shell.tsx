@@ -14,40 +14,39 @@ export function SiteHeader() {
   ];
 
   return (
-    <header className="absolute inset-x-0 top-0 z-30 px-5 pt-5 sm:px-8 sm:pt-6">
+    <header className="absolute inset-x-0 top-0 z-30 px-5 pt-6 sm:px-8">
       <div className="mx-auto flex max-w-[1320px] items-center justify-between">
-        <nav className="hidden gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden gap-8 md:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} data-testid={`link-nav-${link.label.toLowerCase().replace(' ', '-')}`} className={`line-link focus-ring eyebrow !text-[9px] !tracking-[.2em] ${location === link.href ? '!text-[#e7c576]' : '!text-[#a2a39e]'}`}>
+            <Link key={link.href} href={link.href} className="text-[11px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors">
               {link.label}
             </Link>
           ))}
         </nav>
-        <button type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? 'Close menu' : 'Open menu'} data-testid="button-open-menu" className="focus-ring eyebrow flex items-center gap-2 !text-[9px] !text-[#a2a39e] md:hidden">
-          {open ? <X size={15} strokeWidth={1.5} /> : <Menu size={15} strokeWidth={1.5} />}
-          Menu
+        <button type="button" onClick={() => setOpen((v) =>!v)} className="text-[11px] tracking-[0.2em] uppercase text-white/70 md:hidden">
+          {open? <X size={15} /> : <Menu size={15} />} Menu
         </button>
-        <Link href="/" data-testid="link-wordmark" className="focus-ring absolute left-1/2 -translate-x-1/2 font-serif text-[18px] tracking-[.25em] text-[#f0ece0] sm:text-[20px]">
+        <Link href="/" className="absolute left-1/2 -translate-x-1/2 text-white text-[26px] tracking-[0.35em] font-serif font-light">
           MANSEH
         </Link>
-        <Link href="/cart" data-testid="link-bag" className={`focus-ring eyebrow flex items-center gap-2 !text-[9px] !text-[#a2a39e] ${lastAdded ? 'bag-pop' : ''}`}>
-          <ShoppingBag size={14} strokeWidth={1.3} />
-          Bag <span className="text-[#d8ad56]">({bagCount})</span>
+        <Link href="/cart" className="flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/70 hover:text-white">
+          <ShoppingBag size={14} /> Bag <span className="text-[#d8ad56]">({bagCount})</span>
         </Link>
       </div>
       {open && (
-        <nav className="mx-auto mt-5 flex max-w-[1320px] flex-col gap-5 border-t border-[#d8ad56]/20 bg-[#080e14]/95 px-1 pb-5 pt-6 backdrop-blur-md md:hidden" aria-label="Mobile">
+        <nav className="mx-auto mt-5 flex max-w-[1320px] flex-col gap-5 border-t border-white/10 bg-[#080808] pt-6">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setOpen(false)} data-testid={`link-mobile-${link.label.toLowerCase().replace(' ', '-')}`} className="focus-ring eyebrow !text-xs !tracking-[.2em] !text-[#f0ece0]">
+            <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="text-sm text-white/80">
               {link.label}
             </Link>
           ))}
-          <Link href="/login" onClick={() => setOpen(false)} data-testid="link-mobile-sign-in" className="focus-ring eyebrow !text-xs !tracking-[.2em] !text-[#d8ad56]">Sign in</Link>
         </nav>
       )}
     </header>
   );
 }
+
+
 
 export function SiteFooter() {
   return (
