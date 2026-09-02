@@ -88,3 +88,10 @@ export function SiteFooter() {
     </footer>
   );
 }
+export function PageFrame({ children }: { children: any }) {
+  return <div className="min-h-screen bg-[#0c0c0c] text-white">{children}</div>;
+}
+
+export function Notice({ children }: { children: any }) {
+  return <div className="bg-[#d8ad56] text-black text-center text-[11px] tracking-widest uppercase py-2">{children}</div>;
+}
