@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:root{--background:0 0% 100%;--foreground:240 10% 3.9%;--primary:262 83% 58%;--primary-foreground:0 0% 98%;--border:240 5.9% 90%;--radius:0.75rem}
-*{border-color:hsl(var(--border))}
-body{background:hsl(var(--background));color:hsl(var(--foreground))}
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(240 10% 3.9%);
+  --color-primary: hsl(262 83% 58%);
+  --color-primary-foreground: hsl(0 0% 98%);
+  --color-border: hsl(240 5.9% 90%);
+  --radius: 0.75rem;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
