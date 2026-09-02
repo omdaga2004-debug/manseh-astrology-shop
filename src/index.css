@@ -28,3 +28,15 @@ h1, h2, h3, .serif {
   width: 0px;
   background: transparent;
 }
+/* Premium font spacing */
+h1, h2 {
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+p, span, button, a {
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+header {
+  letter-spacing: 0.3em;
+}
